@@ -16,6 +16,11 @@ function octavePlotCfg(axis, isA)
         yl = [-36 36];
         y_marks = yl(1):6:yl(2);
         axis.YTick = y_marks;
+
+         text(YAxisPos*(1-1*0.05), 38, ...
+         "L(\omega), дБ", ...
+         'HorizontalAlignment','right', ...
+         'VerticalAlignment','middle');
     else    % Если фаза
         axis.YAxis.Visible = "off";
         YAxisPos = 1;   % положение вертикальной оси
@@ -23,6 +28,11 @@ function octavePlotCfg(axis, isA)
         yl = [-180 180];
         y_marks = yl(1):45:yl(2);
         axis.YTick = y_marks;
+
+         text(YAxisPos*(1-1*0.05), 190, ...
+         "\phi(\omega), град", ...
+         'HorizontalAlignment','right', ...
+         'VerticalAlignment','middle');
     end
     
 
@@ -51,6 +61,7 @@ function octavePlotCfg(axis, isA)
                  'HorizontalAlignment','right', ...
                  'VerticalAlignment','middle');
             end
+
         end
     end
 end
