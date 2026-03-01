@@ -41,8 +41,8 @@ xlabel("\omega");   % Подписываем ось x (ось y подписыв
 
 % Берём информацию об осях и редактируем их с помощью особой функции. С её
 % помощью оси будут выглядеть так как на рисунках в учебнике. 1 означает
-% что мы рисуем ЛАХ, 0 - что рисуем ЛФХ.
-EssentialsPack.octavePlotCfg(ax, 1);
+% что мы рисуем ЛАХ, 0 - что рисуем ЛФХ. Затем - границы графика по x и y
+EssentialsPack.octavePlotCfg(ax, 1, [1/32 32], [-12 12]);
 
 
 % Теперь работаем со вторым графиком по аналогии с предудущим, но теперь
@@ -53,7 +53,7 @@ title("ЛФХ усилительного звена");   % Добавляем з
 grid on;    % Добавляем сетку
 xlabel("\omega");   % Подписываем ось x (ось y подписывается сама)
 grid on;
-EssentialsPack.octavePlotCfg(ax, 0);
+EssentialsPack.octavePlotCfg(ax, 0, [1/32 32], [-180 180]);
 
 
 % Далее по аналогии отобразим ЛХ оставшихся звеньев.
@@ -67,14 +67,14 @@ grid on;
 title("ЛАХ интегрирующего звена");
 grid on;
 xlabel("\omega");
-EssentialsPack.octavePlotCfg(ax, 1);
+EssentialsPack.octavePlotCfg(ax, 1, [1/32 32], [-12 12]);
 ax = nexttile;
 semilogx(zvenoGen.omega, zvenoGen.Phi{2}, 'LineWidth', 2);
 grid on;
 title("ЛФХ интегрирующего звена");
 grid on;
 xlabel("\omega");
-EssentialsPack.octavePlotCfg(ax, 0);
+EssentialsPack.octavePlotCfg(ax, 0, [1/32 32], [-180 180]);
 
 
 figure(name="Дифференциирующее звено");
@@ -85,14 +85,14 @@ grid on;
 title("ЛАХ дифференциирующего звена");
 grid on;
 xlabel("\omega");
-EssentialsPack.octavePlotCfg(ax, 1);
+EssentialsPack.octavePlotCfg(ax, 1, [1/32 32], [-12 12]);
 ax = nexttile;
 semilogx(zvenoGen.omega, zvenoGen.Phi{3}, 'LineWidth', 2);
 grid on;
 title("ЛФХ дифференциирующего звена");
 grid on;
 xlabel("\omega");
-EssentialsPack.octavePlotCfg(ax, 0);
+EssentialsPack.octavePlotCfg(ax, 0, [1/32 32], [-180 180]);
 
 
 figure(name="Апериодическое звено");
@@ -103,14 +103,14 @@ grid on;
 title("ЛАХ апериодического звена");
 grid on;
 xlabel("\omega");
-EssentialsPack.octavePlotCfg(ax, 1);
+EssentialsPack.octavePlotCfg(ax, 1, [1/32 32], [-12 12]);
 ax = nexttile;
 semilogx(zvenoGen.omega, zvenoGen.Phi{4}, 'LineWidth', 2);
 grid on;
 title("ЛФХ апериодического звена");
 grid on;
 xlabel("\omega")
-EssentialsPack.octavePlotCfg(ax, 0);
+EssentialsPack.octavePlotCfg(ax, 0, [1/32 32], [-180 180]);
 
 
 figure(name="Форсирующее звено");
@@ -121,14 +121,14 @@ grid on;
 title("ЛАХ форсирущего звена");
 grid on;
 xlabel("\omega");
-EssentialsPack.octavePlotCfg(ax, 1);
+EssentialsPack.octavePlotCfg(ax, 1, [1/32 32], [-12 12]);
 ax = nexttile;
 semilogx(zvenoGen.omega, zvenoGen.Phi{5}, 'LineWidth', 2);
 grid on;
 title("ЛФХ форсирущего звена");
 grid on;
 xlabel("\omega");
-EssentialsPack.octavePlotCfg(ax, 0);
+EssentialsPack.octavePlotCfg(ax, 0, [1/32 32], [-180 180]);
 
 
 % Теперь нарисуем графики ЛХ суммы звеньев. Теперь мы обращаемся к
@@ -141,11 +141,11 @@ grid on;
 title("ЛАХ суммы звеньев");
 grid on;
 xlabel("\omega");
-EssentialsPack.octavePlotCfg(ax, 1);
+EssentialsPack.octavePlotCfg(ax, 1, [1/32 32], [-12 12]);
 ax = nexttile;
 semilogx(zvenoGen.omega, zvenoGen.Phisum, 'LineWidth', 2);
 grid on;
 title("ЛФХ суммы звеньев");
 grid on;
 xlabel("\omega");
-EssentialsPack.octavePlotCfg(ax, 0);
+EssentialsPack.octavePlotCfg(ax, 0, [1/32 32], [-180 180]);

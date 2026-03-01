@@ -23,12 +23,12 @@ classdef testZvenoLH < matlab.unittest.TestCase
             ax = nexttile;
             semilogx(zvenoGen.omega, zvenoGen.L{1}, 'LineWidth', 2);
             grid on;
-            EssentialsPack.octavePlotCfg(ax, 1);
+            EssentialsPack.octavePlotCfg(ax, 1, [1/32 32], [-12 12]);
 
             ax = nexttile;
             semilogx(zvenoGen.omega, zvenoGen.Phi{1}, 'LineWidth', 2);
             grid on;
-            EssentialsPack.octavePlotCfg(ax, 0);
+            EssentialsPack.octavePlotCfg(ax, 0, [1/32 32], [-90 90]);
 
         end
 
@@ -51,12 +51,12 @@ classdef testZvenoLH < matlab.unittest.TestCase
             ax = nexttile;
             semilogx(zvenoGen.omega, zvenoGen.L{1}, 'LineWidth', 2);
             grid on;
-            EssentialsPack.octavePlotCfg(ax, 1);
+            EssentialsPack.octavePlotCfg(ax, 1, [1/32 32], [-12 12]);
             
             ax = nexttile;
             semilogx(zvenoGen.omega, zvenoGen.Phi{1}, 'LineWidth', 2);
             grid on;
-            EssentialsPack.octavePlotCfg(ax, 0);
+            EssentialsPack.octavePlotCfg(ax, 0, [1/32 32], [-90 90]);
         end
 
         function testDiff(testCase)
@@ -78,12 +78,12 @@ classdef testZvenoLH < matlab.unittest.TestCase
             ax = nexttile;
             semilogx(zvenoGen.omega, zvenoGen.L{1}, 'LineWidth', 2);
             grid on;
-            EssentialsPack.octavePlotCfg(ax, 1);
+            EssentialsPack.octavePlotCfg(ax, 1, [1/32 32], [-12 12]);
             
             ax = nexttile;
             semilogx(zvenoGen.omega, zvenoGen.Phi{1}, 'LineWidth', 2);
             grid on;
-            EssentialsPack.octavePlotCfg(ax, 0);
+            EssentialsPack.octavePlotCfg(ax, 0, [1/32 32], [-90 90]);
 
         end
 
@@ -106,12 +106,12 @@ classdef testZvenoLH < matlab.unittest.TestCase
             ax = nexttile;
             semilogx(zvenoGen.omega, zvenoGen.L{1}, 'LineWidth', 2);
             grid on;
-            EssentialsPack.octavePlotCfg(ax, 1);
+            EssentialsPack.octavePlotCfg(ax, 1, [1/32 32], [-12 12]);
             
             ax = nexttile;
             semilogx(zvenoGen.omega, zvenoGen.Phi{1}, 'LineWidth', 2);
             grid on;
-            EssentialsPack.octavePlotCfg(ax, 0);
+            EssentialsPack.octavePlotCfg(ax, 0, [1/32 32], [-90 90]);
 
         end
 
@@ -134,12 +134,12 @@ classdef testZvenoLH < matlab.unittest.TestCase
             ax = nexttile;
             semilogx(zvenoGen.omega, zvenoGen.L{1}, 'LineWidth', 2);
             grid on;
-            EssentialsPack.octavePlotCfg(ax, 1);
+            EssentialsPack.octavePlotCfg(ax, 1, [1/32 32], [-12 12]);
             
             ax = nexttile;
             semilogx(zvenoGen.omega, zvenoGen.Phi{1}, 'LineWidth', 2);
             grid on;
-            EssentialsPack.octavePlotCfg(ax, 0);
+            EssentialsPack.octavePlotCfg(ax, 0, [1/32 32], [-90 90]);
 
         end
 
@@ -155,11 +155,11 @@ classdef testZvenoLH < matlab.unittest.TestCase
             
             zvenoGen = ZvenoLH(W);
 
-            zvenoGen.showZvenoLH(1);
-            zvenoGen.showZvenoLH(2);
-            zvenoGen.showZvenoLH(3);
-            zvenoGen.showZvenoLH(4);
-            zvenoGen.showSumLH;
+            zvenoGen.showZvenoLH(1, [1/32 32], [-30 30], [-90 90]);
+            zvenoGen.showZvenoLH(2, [1/32 32], [-30 30], [-90 90]);
+            zvenoGen.showZvenoLH(3, [1/32 32], [-30 30], [-90 90]);
+            zvenoGen.showZvenoLH(4, [1/32 32], [-30 30], [-90 90]);
+            zvenoGen.showSumLH([1/32 32], [-30 30], [-90 90]);
 
         end
 
@@ -173,7 +173,7 @@ classdef testZvenoLH < matlab.unittest.TestCase
             
             semilogx(f, H, 'LineWidth', 2);
 
-            EssentialsPack.octavePlotCfg(ax,1);
+            EssentialsPack.octavePlotCfg(ax,1,[1/16 16],[-42 10]);
             
 
            

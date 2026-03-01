@@ -1,37 +1,39 @@
-function octavePlotCfg(axis, isA)
+function octavePlotCfg(axis, isA, xlimit, ylimit)
 %octavePlotCfg Конфигурация графика в соответствии с октавным отображением
 %(привет САУ)
 
     % Настройка оси X
     axis.XAxisLocation = 'origin';
-    axis.XTick = [1/32 1/16 1/8 1/4 1/2 1 2 4 8 16 32];
-    axis.XTickLabel = {'1/32','1/16','1/8','1/4','1/2','1','2','4','8','16','32'};
-    xlim([1/32 32]);
+    axis.XTick = [1/128 1/64 1/32 1/16 1/8 1/4 1/2 1 2 4 8 16 32 64 128];
+    axis.XTickLabel = {'1/128','1/64','1/32','1/16','1/8','1/4','1/2','1','2','4','8','16','32','64','128'};
+    xlim(xlimit);
 
     % Настройка оси Y
     if isA  % Если амплитуда
         axis.YAxis.Visible = "off";
         YAxisPos = 1;   % положение вертикальной оси
         xline(YAxisPos);
-        yl = [-36 36];
+        yl = [-60 60];
+        ylim(ylimit);
         y_marks = yl(1):6:yl(2);
         axis.YTick = y_marks;
 
-         text(YAxisPos*(1-1*0.05), 38, ...
+         text(YAxisPos*(1+1*0.065), ylimit(2)-(ylimit(2)-ylimit(1))*0.025, ...
          "L(\omega), дБ", ...
-         'HorizontalAlignment','right', ...
+         'HorizontalAlignment','left', ...
          'VerticalAlignment','middle');
     else    % Если фаза
         axis.YAxis.Visible = "off";
         YAxisPos = 1;   % положение вертикальной оси
         xline(YAxisPos);
         yl = [-180 180];
+        ylim(ylimit);
         y_marks = yl(1):45:yl(2);
         axis.YTick = y_marks;
 
-         text(YAxisPos*(1-1*0.05), 190, ...
+         text(YAxisPos*(1+1*0.065), ylimit(2)-(ylimit(2)-ylimit(1))*0.025, ...
          "\phi(\omega), град", ...
-         'HorizontalAlignment','right', ...
+         'HorizontalAlignment','left', ...
          'VerticalAlignment','middle');
     end
     
