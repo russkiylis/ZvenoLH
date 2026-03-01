@@ -21,12 +21,12 @@ classdef testZvenoLH < matlab.unittest.TestCase
             figure(name="Усилительное звено")
             tiledlayout(2,1);
             ax = nexttile;
-            semilogx(zvenoGen.w, zvenoGen.L{1}, 'LineWidth', 2);
+            semilogx(zvenoGen.omega, zvenoGen.L{1}, 'LineWidth', 2);
             grid on;
             EssentialsPack.octavePlotCfg(ax, 1);
 
             ax = nexttile;
-            semilogx(zvenoGen.w, zvenoGen.Phi{1}, 'LineWidth', 2);
+            semilogx(zvenoGen.omega, zvenoGen.Phi{1}, 'LineWidth', 2);
             grid on;
             EssentialsPack.octavePlotCfg(ax, 0);
 
@@ -49,12 +49,12 @@ classdef testZvenoLH < matlab.unittest.TestCase
             figure(name="Интегрирующее звено")
             tiledlayout(2,1);
             ax = nexttile;
-            semilogx(zvenoGen.w, zvenoGen.L{1}, 'LineWidth', 2);
+            semilogx(zvenoGen.omega, zvenoGen.L{1}, 'LineWidth', 2);
             grid on;
             EssentialsPack.octavePlotCfg(ax, 1);
             
             ax = nexttile;
-            semilogx(zvenoGen.w, zvenoGen.Phi{1}, 'LineWidth', 2);
+            semilogx(zvenoGen.omega, zvenoGen.Phi{1}, 'LineWidth', 2);
             grid on;
             EssentialsPack.octavePlotCfg(ax, 0);
         end
@@ -76,12 +76,12 @@ classdef testZvenoLH < matlab.unittest.TestCase
             figure(name="Дифференциирующее звено")
             tiledlayout(2,1);
             ax = nexttile;
-            semilogx(zvenoGen.w, zvenoGen.L{1}, 'LineWidth', 2);
+            semilogx(zvenoGen.omega, zvenoGen.L{1}, 'LineWidth', 2);
             grid on;
             EssentialsPack.octavePlotCfg(ax, 1);
             
             ax = nexttile;
-            semilogx(zvenoGen.w, zvenoGen.Phi{1}, 'LineWidth', 2);
+            semilogx(zvenoGen.omega, zvenoGen.Phi{1}, 'LineWidth', 2);
             grid on;
             EssentialsPack.octavePlotCfg(ax, 0);
 
@@ -104,12 +104,12 @@ classdef testZvenoLH < matlab.unittest.TestCase
             figure(name="Апериодическое звено")
             tiledlayout(2,1);
             ax = nexttile;
-            semilogx(zvenoGen.w, zvenoGen.L{1}, 'LineWidth', 2);
+            semilogx(zvenoGen.omega, zvenoGen.L{1}, 'LineWidth', 2);
             grid on;
             EssentialsPack.octavePlotCfg(ax, 1);
             
             ax = nexttile;
-            semilogx(zvenoGen.w, zvenoGen.Phi{1}, 'LineWidth', 2);
+            semilogx(zvenoGen.omega, zvenoGen.Phi{1}, 'LineWidth', 2);
             grid on;
             EssentialsPack.octavePlotCfg(ax, 0);
 
@@ -132,12 +132,12 @@ classdef testZvenoLH < matlab.unittest.TestCase
             figure(name="Форсирующее звено")
             tiledlayout(2,1);
             ax = nexttile;
-            semilogx(zvenoGen.w, zvenoGen.L{1}, 'LineWidth', 2);
+            semilogx(zvenoGen.omega, zvenoGen.L{1}, 'LineWidth', 2);
             grid on;
             EssentialsPack.octavePlotCfg(ax, 1);
             
             ax = nexttile;
-            semilogx(zvenoGen.w, zvenoGen.Phi{1}, 'LineWidth', 2);
+            semilogx(zvenoGen.omega, zvenoGen.Phi{1}, 'LineWidth', 2);
             grid on;
             EssentialsPack.octavePlotCfg(ax, 0);
 
@@ -155,17 +155,11 @@ classdef testZvenoLH < matlab.unittest.TestCase
             
             zvenoGen = ZvenoLH(W);
 
-            figure(name="Много звеньев")
-            tiledlayout(2,1);
-            ax = nexttile;
-            semilogx(zvenoGen.w, zvenoGen.Lsum, 'LineWidth', 2);
-            grid on;
-            EssentialsPack.octavePlotCfg(ax, 1);
-            
-            ax = nexttile;
-            semilogx(zvenoGen.w, zvenoGen.Phisum, 'LineWidth', 2);
-            grid on;
-            EssentialsPack.octavePlotCfg(ax, 0);
+            zvenoGen.showZvenoLH(1);
+            zvenoGen.showZvenoLH(2);
+            zvenoGen.showZvenoLH(3);
+            zvenoGen.showZvenoLH(4);
+            zvenoGen.showSumLH;
 
         end
 
