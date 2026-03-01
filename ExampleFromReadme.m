@@ -9,6 +9,6 @@ W = {
     struct('Type',"Форс",'T',Tf)
 };
 
-zvenoGen = ZvenoLH(W);
+LH = ZvenoLH(W);
 
-zvenoGen.showSumLH([1/4 64], [-55 20], [-200 30]);  % для вывода ЛХ всей цепи
+LH.showSumLH([1/4 64], [-55 20], [-200 30]);  % для вывода ЛХ всей цепи
