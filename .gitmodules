@@ -1,0 +1,5 @@
+[submodule "Submodules"]
+[submodule "EssentialsPack"]
+[submodule "Packs/EssentialsPack"]
+	path = Packs/EssentialsPack
+	url = https://github.com/russkiylis/EssentialsPack.git

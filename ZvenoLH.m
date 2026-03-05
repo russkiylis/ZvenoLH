@@ -19,6 +19,7 @@ classdef ZvenoLH
 
     methods
         function obj = ZvenoLH(W)
+            addpath(genpath("Packs"));
 
             % Конструктор
             obj.W = W;
