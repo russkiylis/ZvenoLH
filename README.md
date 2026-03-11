@@ -28,11 +28,39 @@
 6. **Колебательное звено** (по факту, состоит из других звеньев, в программе не реализовано)
 ![Koleb](https://github.com/russkiylis/ZvenoLH/blob/main/images/koleb.png?raw=true)
 
+## Контрольная работа №1
+
 > [!NOTE]
 > Скорее всего ваша первоначальная задача будет состоять в следующем:
 > 1. Разложить ПФ цепи на ПФ звеньев, помноженные друг на друга
 > 2. Найти ЛХ каждого из звеньев
 > 3. Сложить ЛХ и получить ЛХ цепи
+
+Что придётся сделать на контрольной? Разберём по пунктам.
+
+### 1. Нарисовать ЛХ.
+В целом, теория про звенья написана сверху. Добавлю ещё картинку.
+![ksusha_LH](https://github.com/russkiylis/ZvenoLH/blob/main/images/ksusha_LH.jpg)
+
+### 2. Добавить коррекцию
+ДОПИШУ ТУТ ЧУТЬ ПОЗЖЕ
+![ksusha_korrec](https://github.com/russkiylis/ZvenoLH/blob/main/images/ksusha_korrec.jpg)
+Важен пункт 1
+![preobr](https://github.com/russkiylis/ZvenoLH/blob/main/images/preobr.jpg)
+
+### 3. Посчитать матрицы
+ДОПИШУ ТУТ ЧУТЬ ПОЗЖЕ
+![ksusha_matricy](https://github.com/russkiylis/ZvenoLH/blob/main/images/ksusha_matricy.jpg)
+Важен пункт 2
+![preobr](https://github.com/russkiylis/ZvenoLH/blob/main/images/preobr.jpg)
+
+### 4. Посчитать ошибки
+ДОПИШУ ТУТ ЧУТЬ ПОЗЖЕ
+![tablica_oshibok](https://github.com/russkiylis/ZvenoLH/blob/main/images/tablica_oshibok.jpg)
+
+### 5. Посчитать характеристики переходного процесса
+ДОПИШУ ТУТ ЧУТЬ ПОЗЖЕ
+![pereh_process](https://github.com/russkiylis/ZvenoLH/blob/main/images/pereh_process.jpg)
 
 ## Программа
 > [!WARNING]
