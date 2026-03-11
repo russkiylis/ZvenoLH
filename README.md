@@ -45,13 +45,13 @@
 ### 2. Добавить коррекцию
 ДОПИШУ ТУТ ЧУТЬ ПОЗЖЕ
 ![ksusha_korrec](https://github.com/russkiylis/ZvenoLH/blob/main/images/ksusha_korrec.jpg)
-Важен пункт 1
+Важен пункт 2
 ![preobr](https://github.com/russkiylis/ZvenoLH/blob/main/images/preobr.jpg)
 
 ### 3. Посчитать матрицы
 ДОПИШУ ТУТ ЧУТЬ ПОЗЖЕ
 ![ksusha_matricy](https://github.com/russkiylis/ZvenoLH/blob/main/images/ksusha_matricy.jpg)
-Важен пункт 2
+Важен пункт 1
 ![preobr](https://github.com/russkiylis/ZvenoLH/blob/main/images/preobr.jpg)
 
 ### 4. Посчитать ошибки
