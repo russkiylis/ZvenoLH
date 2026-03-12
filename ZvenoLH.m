@@ -30,7 +30,7 @@ classdef ZvenoLH
                     case "Усил"
                         K = W{i}.K;     % Коэффициент усиления
                         
-                        obj.L{i} = ones(1,length(obj.omega)).*K;    % ЛАХ
+                        obj.L{i} = ones(1,length(obj.omega)).*20.*log10(K);    % ЛАХ
                         obj.Phi{i} = zeros(1,length(obj.omega));    % ЛФХ
 
                     case "Интегр"
