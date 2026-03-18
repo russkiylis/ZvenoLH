@@ -15,6 +15,8 @@ classdef ZvenoLH
 
         omega
         w_sr_vec
+
+        PF  % Передаточная функция
     end
 
     methods
@@ -23,7 +25,8 @@ classdef ZvenoLH
 
             % Конструктор
             obj.W = W;
-            obj.omega = linspace(1/64, 64, 50000);
+            obj.omega = linspace(1/128, 128, 50000);
+            obj.PF = ones(1,length(obj.omega));
 
             for i = 1:length(W)
                 switch W{i}.Type
@@ -32,14 +35,20 @@ classdef ZvenoLH
                         
                         obj.L{i} = ones(1,length(obj.omega)).*20.*log10(K);    % ЛАХ
                         obj.Phi{i} = zeros(1,length(obj.omega));    % ЛФХ
+                        
+                        obj.PF = obj.PF.*K;
 
                     case "Интегр"
                         obj.L{i} = -mag2db(obj.omega);  % ЛАХ
                         obj.Phi{i} = -90.*ones(1,length(obj.omega));    % ЛФХ
 
+                        obj.PF = obj.PF.*(1./(1i.*obj.omega));
+
                     case "Диф"
                         obj.L{i} = mag2db(obj.omega);   % ЛАХ
                         obj.Phi{i} = 90.*ones(1,length(obj.omega)); % ЛФХ
+
+                        obj.PF = obj.PF.*(1i.*obj.omega);
 
                     case "Апериод"
                         T = W{i}.T;     % Постоянная времени
@@ -62,6 +71,8 @@ classdef ZvenoLH
                         phi_aperiod = [ones(1,lengthBefore).*grad_aperiod(1) phi_spline ones(1,lengthAfter).*grad_aperiod(length(grad_aperiod))];
                         obj.Phi{i} = phi_aperiod;  % ЛФХ
 
+                        obj.PF = obj.PF.*(1./(1+1i.*obj.omega.*T));
+
                     case "Форс"
                         T = W{i}.T;     % Постоянная времени
                         w_sr = 1/T;     % Частота согласования
@@ -81,6 +92,8 @@ classdef ZvenoLH
                         phi_fors = interp1(w_fors, grad_fors, omegaSpline, 'pchip'); % Интерполяция по точкам ЛФХ
                         phi_fors = [ones(1,lengthBefore).*grad_fors(1) phi_fors ones(1,lengthAfter).*grad_fors(length(grad_fors))];
                         obj.Phi{i} = phi_fors;  % ЛФХ
+
+                        obj.PF = obj.PF.*(1+1i.*obj.omega.*T);
                 end
 
                 % Суммирование звеьев
