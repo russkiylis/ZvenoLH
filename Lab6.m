@@ -45,7 +45,7 @@ LH3.showSumLH([1/16 16], [-20 50], [-200 30]);
 b = 1;
 c = b;
 
-a = linspace(b*1.001, 10*b, 5000);  % амплитуда от b до ...
+a = linspace(b*1.00001, 10*b, 5000);  % амплитуда от b до ...
 Re_NE = -pi/(4*c) * sqrt(a.^2 - b^2);
 Im_NE = -pi*b/(4*c) * ones(size(a));  % константа
 
@@ -117,3 +117,26 @@ dist = abs(LH2.PF - (Re_cross + 1j*Im_cross));
 [~, idx] = min(dist);
 w0 = LH2.omega(idx);
 disp(w0);
+
+
+%% == Третий пункт - ЛХ линеаризованных САУ ==
+b = 1;
+c = b;
+sigma_x = [b/2 b 2*b 4*b];
+
+K0 = (c./sigma_x).*sqrt(2./pi).*exp(-(b.^2)./(2.*sigma_x.^2));
+disp(K0);
+
+for k = 1:length(K0)
+    W1K = [W1, struct('Type',"Усил",'K',K0(k))];
+    W2K = [W2, struct('Type',"Усил",'K',K0(k))];
+    W3K = [W3, struct('Type',"Усил",'K',K0(k))];
+
+    LH1K = ZvenoLH(W1K);
+    LH2K = ZvenoLH(W2K);
+    LH3K = ZvenoLH(W3K);
+
+    LH1K.showSumLH([1/16 16], [-20 50], [-200 30]);
+    LH2K.showSumLH([1/16 16], [-20 50], [-200 30]);
+    LH3K.showSumLH([1/16 16], [-20 50], [-200 30]);
+end

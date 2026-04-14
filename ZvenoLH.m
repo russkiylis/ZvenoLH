@@ -25,7 +25,7 @@ classdef ZvenoLH
 
             % Конструктор
             obj.W = W;
-            obj.omega = linspace(1/128, 128, 50000);
+            obj.omega = linspace(1/256, 1024, 100000);
             obj.PF = ones(1,length(obj.omega));
 
             for i = 1:length(W)
